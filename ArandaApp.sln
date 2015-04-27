@@ -9,6 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentación", "1. Pres
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Servicios", "2. Servicios", "{99D3E129-8976-4ECB-8DB9-EB2C8220CD1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiciosAranda", "ServiciosAranda\ServiciosAranda.csproj", "{91371F1F-965E-4C5E-9ECD-61923410FAA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Acceso a Datos", "4. Acceso a Datos", "{C45B2BC0-1489-4BCC-B3E8-2F6EA3789A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceso", "Acceso\Acceso.csproj", "{C4FC1C4E-F760-47D7-AC0F-BDA1B339E591}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Logica", "3. Logica", "{505832BF-3AE2-4C57-870E-CD6C1C0D8C9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +27,21 @@ Global
 		{B74EA179-8D7D-4B1D-88E0-CCD18B1FDC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B74EA179-8D7D-4B1D-88E0-CCD18B1FDC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B74EA179-8D7D-4B1D-88E0-CCD18B1FDC43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91371F1F-965E-4C5E-9ECD-61923410FAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91371F1F-965E-4C5E-9ECD-61923410FAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91371F1F-965E-4C5E-9ECD-61923410FAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91371F1F-965E-4C5E-9ECD-61923410FAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4FC1C4E-F760-47D7-AC0F-BDA1B339E591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4FC1C4E-F760-47D7-AC0F-BDA1B339E591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4FC1C4E-F760-47D7-AC0F-BDA1B339E591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4FC1C4E-F760-47D7-AC0F-BDA1B339E591}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B74EA179-8D7D-4B1D-88E0-CCD18B1FDC43} = {24DAD56C-FBE4-478C-BB28-44DF8E965C7E}
+		{91371F1F-965E-4C5E-9ECD-61923410FAA3} = {99D3E129-8976-4ECB-8DB9-EB2C8220CD1E}
+		{C4FC1C4E-F760-47D7-AC0F-BDA1B339E591} = {C45B2BC0-1489-4BCC-B3E8-2F6EA3789A6C}
 	EndGlobalSection
 EndGlobal
