@@ -12,6 +12,43 @@ namespace ServiciosAranda
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
+        /*
+         * crear usuarios, roles, permisos
+         * listar los usuarios por un rol determinado y por un permiso determinado.
+         * */
+        public string CrearUsuario(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+        public string CrearRol(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+        public string CrearPermiso(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+        public string ListarUsuariosPorRol(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+        public string ListarUsuariosPorPermiso(int value)
+        {
+            return string.Format("You entered: {0}", value);
+        }
+        //// Listar Roles y Permisos existentes
+        public string ListarPermisos()
+        {
+            return string.Format("You entered:");
+        }
+        public string ListarRoles()
+        {
+            return string.Format("You entered:");
+        }
+
+
+
+        ///----
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
