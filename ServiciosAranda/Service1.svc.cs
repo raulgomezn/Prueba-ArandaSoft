@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using ArandaLogica;
 
 namespace ServiciosAranda
 {
@@ -39,7 +40,9 @@ namespace ServiciosAranda
         //// Listar Roles y Permisos existentes
         public string ListarPermisos()
         {
-            return string.Format("You entered:");
+            LogicaGeneral et = new LogicaGeneral();
+            IList<string> conditions = et.ListarPermisos();
+            return string.Format("You entered: ListarPermisos");
         }
         public string ListarRoles()
         {

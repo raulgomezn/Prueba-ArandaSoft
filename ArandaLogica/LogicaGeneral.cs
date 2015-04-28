@@ -25,14 +25,14 @@ namespace ArandaLogica
         /// </summary>
         /// <returns>Retorna la lista de los permisos con nombre y llave.</returns>
         public IList<String> ListarPermisos() 
-        { 
-             
-            dbarandaEntities context = new dbarandaEntities();
+        {
+
+            DBARANDAEntities context = new DBARANDAEntities();
             
                     List<string> conditions = new List<string>();
 
-                    var query = from es in context.permiso.AsNoTracking()
-                                select new { es.idPermiso, es.Nombre };
+                    var query = from es in context.PERMISO.AsNoTracking()
+                                select new { es.NOMBRE };
                     query = query.Distinct();
             return conditions;
         }

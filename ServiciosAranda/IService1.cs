@@ -17,6 +17,9 @@ namespace ServiciosAranda
         string GetData(int value);
 
         [OperationContract]
+        string ListarPermisos();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio

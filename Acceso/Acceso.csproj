@@ -30,13 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -46,50 +49,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelAra.Context.cs">
+    <Compile Include="ModelSql.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAra.Context.tt</DependentUpon>
+      <DependentUpon>ModelSql.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelAra.cs">
+    <Compile Include="ModelSql.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAra.tt</DependentUpon>
+      <DependentUpon>ModelSql.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelAra.Designer.cs">
+    <Compile Include="ModelSql.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelAra.edmx</DependentUpon>
+      <DependentUpon>ModelSql.edmx</DependentUpon>
     </Compile>
-    <Compile Include="permiso.cs">
-      <DependentUpon>ModelAra.tt</DependentUpon>
+    <Compile Include="PERMISO.cs">
+      <DependentUpon>ModelSql.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rol.cs">
-      <DependentUpon>ModelAra.tt</DependentUpon>
+    <Compile Include="ROL.cs">
+      <DependentUpon>ModelSql.tt</DependentUpon>
     </Compile>
-    <Compile Include="usuario.cs">
-      <DependentUpon>ModelAra.tt</DependentUpon>
+    <Compile Include="USUARIO.cs">
+      <DependentUpon>ModelSql.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="ModelAra.edmx">
+    <EntityDeploy Include="ModelSql.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelAra.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelSql.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelAra.Context.tt">
+    <None Include="ModelSql.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelAra.edmx</DependentUpon>
-      <LastGenOutput>ModelAra.Context.cs</LastGenOutput>
+      <DependentUpon>ModelSql.edmx</DependentUpon>
+      <LastGenOutput>ModelSql.Context.cs</LastGenOutput>
     </None>
-    <None Include="ModelAra.edmx.diagram">
-      <DependentUpon>ModelAra.edmx</DependentUpon>
+    <None Include="ModelSql.edmx.diagram">
+      <DependentUpon>ModelSql.edmx</DependentUpon>
     </None>
-    <None Include="ModelAra.tt">
+    <None Include="ModelSql.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelAra.edmx</DependentUpon>
-      <LastGenOutput>ModelAra.cs</LastGenOutput>
+      <DependentUpon>ModelSql.edmx</DependentUpon>
+      <LastGenOutput>ModelSql.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
