@@ -18,6 +18,8 @@ namespace ServiciosAranda
         string GetData(int value);
 
         [OperationContract]
+        //[WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
+        [WebGet(UriTemplate = "/ListarPermisos")]
         List<Permiso> ListarPermisos();
 
         [OperationContract]
