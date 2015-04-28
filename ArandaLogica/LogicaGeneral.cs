@@ -16,6 +16,7 @@ namespace ArandaLogica
     using System.Text;
     using System.Threading.Tasks;
     using Acceso;
+    using ArandaLogica.Modelo;
     #endregion
 
     public class LogicaGeneral
@@ -24,16 +25,29 @@ namespace ArandaLogica
         /// Listar Permisos.
         /// </summary>
         /// <returns>Retorna la lista de los permisos con nombre y llave.</returns>
-        public IList<String> ListarPermisos() 
+        public List<Permiso> ListarPermisos()
         {
 
             DBARANDAEntities context = new DBARANDAEntities();
-            
-                    List<string> conditions = new List<string>();
 
-                    var query = from es in context.PERMISO.AsNoTracking()
-                                select new { es.NOMBRE };
-                    query = query.Distinct();
+            List<Permiso> conditions = new List<Permiso>();
+
+            var query = (from es in context.PERMISO.AsNoTracking()
+                        select new Permiso { nombre = es.NOMBRE }).Distinct();
+
+            return query.ToList();
+        }
+
+        public List<String> ListarRoles()
+        {
+
+            DBARANDAEntities context = new DBARANDAEntities();
+
+            List<string> conditions = new List<string>();
+
+            var query = from es in context.PERMISO.AsNoTracking()
+                        select new { es.NOMBRE };
+            query = query.Distinct();
             return conditions;
         }
     }

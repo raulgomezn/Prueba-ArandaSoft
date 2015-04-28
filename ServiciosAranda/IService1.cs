@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArandaLogica.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -17,7 +18,7 @@ namespace ServiciosAranda
         string GetData(int value);
 
         [OperationContract]
-        string ListarPermisos();
+        List<Permiso> ListarPermisos();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
