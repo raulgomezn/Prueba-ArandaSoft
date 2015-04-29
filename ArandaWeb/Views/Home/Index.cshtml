@@ -2,6 +2,45 @@
     ViewBag.Title = "Home Page";
 }
 
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        var bhRequest = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
+            "<s:Body>" +
+            "<GetData xmlns=\"http://tempuri.org/\">" +
+            "<value>10</value>" +
+            "</GetData>" +
+            "</s:Body>" +
+        "</s:Envelope>";
+        $("#btnWCFBasicHttp").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:60396/Service1.svc/GetData",
+                data: bhRequest,
+                timeout: 10000,
+                contentType: "text/xml",
+                dataType: "xml",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService1/GetData");
+                },
+                success: function (data) {
+                    $(data).find("GetDataResponse").each(function () {
+                        alert($(this).find("GetDataResult").text());
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert(error);
+
+                }
+            });
+        });
+    });
+
+
+</script>
+
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
@@ -17,6 +56,9 @@
             for enjoyable, agile development.
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <form>
+            <input type="button" id="btnWCFBasicHttp" value="Prueba">
+        </form>
     </div>
-
+    
 </div>

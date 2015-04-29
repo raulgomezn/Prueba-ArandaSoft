@@ -49,9 +49,9 @@ namespace ServiciosAranda
 
 
         ///----
-        public string GetData(int value)
+        public string GetData(string value)
         {
-            return string.Format("You entered: {0}", value);
+            return string.Format("You entered: {0}", Convert.ToInt32(value));
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

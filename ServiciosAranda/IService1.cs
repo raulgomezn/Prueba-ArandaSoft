@@ -15,11 +15,12 @@ namespace ServiciosAranda
     {
 
         [OperationContract]
-        string GetData(int value);
+        [WebGet(UriTemplate = "/GetData/{value}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string GetData(string value);
 
         [OperationContract]
         //[WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
-        [WebGet(UriTemplate = "/ListarPermisos")]
+        [WebGet(UriTemplate = "/ListarPermisos", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         List<Permiso> ListarPermisos();
 
         [OperationContract]
