@@ -17,13 +17,13 @@ namespace Acceso
         public ROL()
         {
             this.PERMISO = new HashSet<PERMISO>();
+            this.USUARIO = new HashSet<USUARIO>();
         }
     
         public int IDROL { get; set; }
-        public Nullable<int> IDUSUARIO { get; set; }
         public string NOMBRE { get; set; }
     
         public virtual ICollection<PERMISO> PERMISO { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
+        public virtual ICollection<USUARIO> USUARIO { get; set; }
     }
 }

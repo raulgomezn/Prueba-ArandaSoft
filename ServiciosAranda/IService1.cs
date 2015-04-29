@@ -1,22 +1,19 @@
-﻿using ArandaLogica.Modelo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-
-namespace ServiciosAranda
+﻿namespace ServiciosAranda
 {
+    #region
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Runtime.Serialization;
+    using System.ServiceModel;
+    using System.ServiceModel.Web;
+    using System.Text;
+    using ArandaLogica.Modelo;
+    #endregion
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
     public interface IService1
     {
-
-        [OperationContract]
-        [WebGet(UriTemplate = "/GetData/{value}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string GetData(string value);
 
         [OperationContract]
         //[WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
@@ -24,9 +21,26 @@ namespace ServiciosAranda
         List<Permiso> ListarPermisos();
 
         [OperationContract]
+        [WebGet(UriTemplate = "/ListarRoles", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Permiso> ListarRoles();
+        
+        [OperationContract]
+        [WebGet(UriTemplate = "/ListarUsuariosPorRol/{value}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Permiso> ListarUsuariosPorRol(string value);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/ListarUsuariosPorPermiso/{value}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Permiso> ListarUsuariosPorPermiso(string value);
+
+
+        //--
+        [OperationContract]
+        [WebGet(UriTemplate = "/GetData/{value}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string GetData(string value);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // TODO: agregue aquí sus operaciones de servicio
     }
 
 

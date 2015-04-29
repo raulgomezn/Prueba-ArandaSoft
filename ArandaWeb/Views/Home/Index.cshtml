@@ -7,38 +7,54 @@
 
 
     $(document).ready(function () {
-        var bhRequest = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
-            "<s:Body>" +
-            "<GetData xmlns=\"http://tempuri.org/\">" +
-            "<value>10</value>" +
-            "</GetData>" +
-            "</s:Body>" +
-        "</s:Envelope>";
-        $("#btnWCFBasicHttp").click(function () {
-            $.ajax({
-                type: "POST",
-                url: "http://localhost:60396/Service1.svc/GetData",
-                data: bhRequest,
-                timeout: 10000,
-                contentType: "text/xml",
-                dataType: "xml",
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("SOAPAction", "http://tempuri.org/IService1/GetData");
-                },
-                success: function (data) {
-                    $(data).find("GetDataResponse").each(function () {
-                        alert($(this).find("GetDataResult").text());
-                    });
-                },
-                error: function (xhr, status, error) {
-                    alert(error);
+        dinamic = ''
+        $.get('http://localhost:60396/Service1.svc/Rest/ListarRoles', function (data) {
+            dinamic += '<select class="form-control" id="rol" name="rol">'
+            for (var i = 0; i < data.length; i++) {
+                dinamic += '<option value="' + data[i].nombre + '">' + data[i].nombre + '</option>'
+            }
+            dinamic += '</select>'
+            $('#Lista1').html(dinamic);
+        });
+        dinamic2 = ''
+        $.get('http://localhost:60396/Service1.svc/Rest/ListarPermisos', function (data) {
+            dinamic2 += '<select class="form-control" id="permiso" name="permiso">'
+            for (var i = 0; i < data.length; i++) {
+                dinamic2 += '<option value="' + data[i].nombre + '">' + data[i].nombre + '</option>'
+            }
+            dinamic2 += '</select>'
+            $('#Lista2').html(dinamic2);
+        });        
+    });
 
-                }
-            });
+$(function(){
+    $("#Enviar").click(function () {
+        var dinamic = '';
+        $.get('http://localhost:60396/Service1.svc/Rest/ListarUsuariosPorPermiso/' + $("#permiso").val(), function (data) {
+            debugger
+            dinamic += '<ul class="list-group">'
+            for (var i = 0; i < data.length; i++) {
+                dinamic += '<li class="list-group-item">' + data[i].nombre + '</li>'
+            }
+            dinamic += '</ul>'
+            $('#Resultado2').html(dinamic);
         });
     });
 
+    $("#Enviar2").click(function () {
+        var dinamic = '';
+        $.get('http://localhost:60396/Service1.svc/Rest/ListarUsuariosPorRol/' + $("#rol").val(), function (data) {
+            debugger
+            dinamic += '<ul class="list-group">'
+            for (var i = 0; i < data.length; i++) {
+                dinamic += '<li class="list-group-item">' + data[i].nombre + '</li>'
+            }
+            dinamic += '</ul>'
+            $('#Resultado1').html(dinamic);
+        });
+    });
 
+});
 </script>
 
 <div class="jumbotron">
@@ -49,16 +65,27 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        <form>
-            <input type="button" id="btnWCFBasicHttp" value="Prueba">
-        </form>
+        <div class="input-group">
+            <label for="rol" class="col-lg-2 control-label">Filtrar por Rol</label>
+            <div class="col-lg-10">
+                <div id="Lista1">
+                </div>
+            </div>
+            <button type="button" id="Enviar2">Enviar</button>
+        </div>
+        Resultado:
+        <div id="Resultado1"></div>
+        <br />
+        <div class="input-group">
+            <label for="permiso" class="col-lg-2 control-label">Filtrar por Permiso</label>
+            <div class="col-lg-10">
+                    <div id="Lista2">
+                    </div>
+            </div>
+            <button type="button" id="Enviar">Enviar</button>
+        </div>
+        Resultado:
+        <div id ="Resultado2"></div>
     </div>
-    
+
 </div>

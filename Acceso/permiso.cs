@@ -17,7 +17,7 @@ namespace Acceso
         public int IDPERMISO { get; set; }
         public Nullable<int> IDROL { get; set; }
         public string NOMBRE { get; set; }
-        public bool HABILITADO { get; set; }
+        public byte[] HABILITADO { get; set; }
     
         public virtual ROL ROL { get; set; }
     }

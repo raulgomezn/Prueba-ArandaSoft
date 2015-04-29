@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b25bf1a00c504169a71575599847d214" Name="Diagram1">
-        <EntityTypeShape EntityType="DBARANDAModel.PERMISO" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBARANDAModel.ROL" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBARANDAModel.USUARIO" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="DBARANDAModel.FK_PERMISO_ROL_PERMI_ROL" ManuallyRouted="false" />
-        <AssociationConnector Association="DBARANDAModel.FK_ROL_ROL_USUAR_USUARIO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBARANDAModel.PERMISO" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="DBARANDAModel.ROL" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="DBARANDAModel.USUARIO" Width="1.5" PointX="3" PointY="3.75" />
+        <AssociationConnector Association="DBARANDAModel.FK_PERMISO_ROL_PERMI_ROL" />
+        <AssociationConnector Association="DBARANDAModel.FK_USUARIO_ROL_USUAR_ROL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

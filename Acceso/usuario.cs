@@ -14,17 +14,13 @@ namespace Acceso
     
     public partial class USUARIO
     {
-        public USUARIO()
-        {
-            this.ROL = new HashSet<ROL>();
-        }
-    
         public int IDUSUARIO { get; set; }
+        public Nullable<int> IDROL { get; set; }
         public string NOMBRE { get; set; }
         public string DIRECCION { get; set; }
         public string TELEFONO { get; set; }
         public string EMAIL { get; set; }
     
-        public virtual ICollection<ROL> ROL { get; set; }
+        public virtual ROL ROL { get; set; }
     }
 }
